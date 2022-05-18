@@ -1,35 +1,79 @@
 console.log("Speedy the Racer");
 
+const displayCounter = document.querySelector("#counter");
 const minusBtn = document.querySelector("#minus-btn");
 const plusBtn = document.querySelector("#plus-btn");
 const resetBtn = document.querySelector("#reset-btn");
 const hundredBtn = document.querySelector("#plus-hundred-btn");
 
-
-
 let counter = 0;
 
 const decrease = () => {
-    counter--;
-    console.log(counter)
-}
+  counter--;
+  console.log(counter);
+  displayCounter.textContent = counter;
+};
 const increase = () => {
-    counter++;
-    console.log(counter)
-}
+  counter++;
+  console.log(counter);
+  displayCounter.textContent = counter;
+};
 const addHundred = () => {
-    counter += 100;
-    console.log(counter)
-}
+  counter += 100;
+  console.log(counter);
+  displayCounter.textContent = counter;
+};
 const reset = () => {
-    counter = 0;
-    console.log(counter)
-}
+  counter = 0;
+  console.log(counter);
+  displayCounter.textContent = counter;
+};
+
+const timesTwo = document
+  .querySelector("#times-two")
+  .addEventListener("click", () => {
+    counter *= 2;
+    console.log(counter);
+    displayCounter.textContent = counter;
+  });
+const inNegative = document
+  .querySelector("#in-negative")
+  .addEventListener("click", () => {
+    counter *= -1;
+    console.log(counter);
+    displayCounter.textContent = counter;
+  });
+const dividedFive = document
+  .querySelector("#divide-five")
+  .addEventListener("click", () => {
+    counter /= 5;
+    console.log(counter);
+    displayCounter.textContent = counter;
+  });
 
 minusBtn.addEventListener("click", decrease);
 plusBtn.addEventListener("click", increase);
 resetBtn.addEventListener("click", reset);
 hundredBtn.addEventListener("click", addHundred);
+
+//     <button class="theme-buttons">facebook</button>
+//     <button class="theme-buttons">devmountain</button>
+//     <button class="theme-buttons">twitter</button>
+//     <button class="theme-buttons">default</button>
+
+const themeBtns = document.querySelectorAll(".theme-buttons");
+console.log(themeBtns);
+
+const selectTheme = (evt) => {
+  //   console.log(evt.target.textContent);
+  const theme = evt.target.textContent;
+  document.querySelector("body").className = theme;
+};
+
+for (let i = 0; i < themeBtns.length; i++) {
+  themeBtns[i].addEventListener("click", selectTheme);
+}
+
 // console.log("hello world");
 
 // let count = 0;
