@@ -1,55 +1,84 @@
-console.log("hello world")
+console.log("Speedy the Racer");
 
-let count = 0;
+const minusBtn = document.querySelector("#minus-btn");
+const plusBtn = document.querySelector("#plus-btn");
+const resetBtn = document.querySelector("#reset-btn");
+const hundredBtn = document.querySelector("#plus-hundred-btn");
 
-function increase(){
-    count++
-    counterText.textContent = count
-    console.log(count)
+
+
+let counter = 0;
+
+const decrease = () => {
+    counter--;
+    console.log(counter)
+}
+const increase = () => {
+    counter++;
+    console.log(counter)
+}
+const addHundred = () => {
+    counter += 100;
+    console.log(counter)
+}
+const reset = () => {
+    counter = 0;
+    console.log(counter)
 }
 
-function decrease(){
-    count--
-    counterText.textContent = count
-    console.log(count)
-}
+minusBtn.addEventListener("click", decrease);
+plusBtn.addEventListener("click", increase);
+resetBtn.addEventListener("click", reset);
+hundredBtn.addEventListener("click", addHundred);
+// console.log("hello world");
 
-let reset = () => {
-    count = 0;
-    counterText.textContent = count
-    console.log(count)
-}
+// let count = 0;
 
-const counterText = document.querySelector("#counter")
+// function increase() {
+//   count++;
+//   counterText.textContent = count;
+//   console.log(count);
+// }
 
-const minusBtn = document.querySelector("#minus-btn")
-const resetBtn = document.querySelector("#reset-btn")
-const plusBtn = document.querySelector("#plus-btn")
+// function decrease() {
+//   count--;
+//   counterText.textContent = count;
+//   console.log(count);
+// }
 
-minusBtn.addEventListener('click',decrease)
-resetBtn.addEventListener('click',reset)
-plusBtn.addEventListener('click',increase)
+// let reset = () => {
+//   count = 0;
+//   counterText.textContent = count;
+//   console.log(count);
+// };
 
-// inline
-// document.querySelector("#minus-btn").addEventListener('click',() => {count--})
+// const counterText = document.querySelector("#counter");
+// const minusBtn = document.querySelector("#minus-btn");
+// const resetBtn = document.querySelector("#reset-btn");
+// const plusBtn = document.querySelector("#plus-btn");
 
-const selectTheme = (event) => {
-    const theme = event.target.textContent
-    console.log(theme)
-    document.querySelector('body').className = theme;
-    document.querySelector('main').className = theme;
+// minusBtn.addEventListener("click", decrease);
+// resetBtn.addEventListener("click", reset);
+// plusBtn.addEventListener("click", increase);
 
-    const buttons = document.querySelectorAll('button')
+// // inline
+// // document.querySelector("#minus-btn").addEventListener('click',() => {count--})
 
-    for(let i = 0;i < buttons.length;i++){
-        buttons[i].className = theme
-    }
-}
+// const selectTheme = (event) => {
+//   const theme = event.target.textContent;
+//   console.log(theme);
+//   document.querySelector("body").className = theme;
+//   document.querySelector("main").className = theme;
 
-const themeBtns = document.querySelectorAll('.theme-buttons')
+//   const buttons = document.querySelectorAll("button");
 
-for(let i = 0; i < themeBtns.length;i++){
-    themeBtns[i].addEventListener('click', selectTheme)
-}
+//   for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].className = theme;
+//   }
+// };
 
+// const themeBtns = document.querySelectorAll(".theme-buttons");
 
+// for (let i = 0; i < themeBtns.length; i++) {
+//   themeBtns[i].addEventListener("click", selectTheme);
+// }
