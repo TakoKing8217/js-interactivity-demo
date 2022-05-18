@@ -68,6 +68,11 @@ const selectTheme = (evt) => {
   //   console.log(evt.target.textContent);
   const theme = evt.target.textContent;
   document.querySelector("body").className = theme;
+  document.querySelector("main").className = theme;
+  const allButtons = document.querySelectorAll("button");
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].className = theme;
+  }
 };
 
 for (let i = 0; i < themeBtns.length; i++) {
